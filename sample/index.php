@@ -251,6 +251,21 @@
                     </div>
                   </article>
                 </li>
+                <li>
+                  <article class="form_box">
+                    <div class="form_ttl">
+                      興味のあるジャンル
+                    </div>
+                    <div class="form_cnt">
+                      <div class="input_wrap">
+                        <div class="file_wrap">
+                          <input type="file" name="upload" id="file" data-multiple-caption="{count}ファイル選択中" multiple />
+<label for="file"><span>ファイルを選択してください</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </li>
                 <li class="required">
                   <article class="form_box">
                     <div class="form_ttl">
@@ -388,7 +403,28 @@
     </footer>
     
     <!-- ! スクリプト ============================== -->
+    <!-- ファイルアップロード -->
     <script>
+      var inputs = document.querySelectorAll( 'input[type="file"]' );
+        Array.prototype.forEach.call( inputs, function( input )
+        {
+        	var label	 = input.nextElementSibling,
+        		labelVal = label.innerHTML;
+        
+        	input.addEventListener( 'change', function( e )
+        	{
+        		var fileName = '';
+        		if( this.files && this.files.length > 1 )
+        			fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+        		else
+        			fileName = e.target.value.split( '\\' ).pop();
+        
+        		if( fileName )
+        			label.querySelector( 'span' ).innerHTML = fileName;
+        		else
+        			label.innerHTML = labelVal;
+        	});
+        });
     </script>
     
     <!-- ! サンプルページ用スタイル ============================== -->

@@ -203,7 +203,7 @@ input,select,button,textarea{ -webkit-appearance: none; -moz-appearance: none; a
 button { outline: none;}
 select::-ms-expand { display: none;}
 input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px #fafafa inset;}
-input[type="checkbox"],input[type="radio"]{display: none;}
+input[type="checkbox"],input[type="radio"],input[type="file"]{display: none;}
 
 
 /* プレイスホルダー */
@@ -345,6 +345,44 @@ input[type=radio]:checked + label::after { display: block;}
 input[type="checkbox"] + label,
 input[type="radio"] + label{
   margin-right: 20px;
+}
+
+
+/* input type file ファイルアップロード */
+.file_wrap input[type="file"] + label{
+  cursor: pointer;
+  color: #fff;
+  font: 500 12px/1em 'noto sans japanese';
+  display: inline-block;
+  padding: 8px 20px 8px 50px;
+  background: #222;  
+  border: 1px solid #222;
+  border-radius: 100px;
+  position: relative;
+}
+.file_wrap input[type="file"] + label:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url(../img/ico_upload_white.svg) no-repeat center center;
+  background-size: contain !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.file_wrap input[type="file"]:focus + label,
+.file_wrap input[type="file"] + label:hover{
+  color: #222;
+  background: #fff;
+}
+.file_wrap input[type="file"]:focus + label:before,
+.file_wrap input[type="file"] + label:hover:before{
+  background: url(../img/ico_upload_black.svg) no-repeat center center;
 }
 
 
