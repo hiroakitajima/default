@@ -201,6 +201,23 @@
                 <li>
                   <article class="form_box">
                     <div class="form_ttl">
+                      メルマガ
+                    </div>
+                    <div class="form_cnt">
+                      <div class="input_wrap">
+                        <div class="radio_wrap tab">
+                          <input checked="" name="radio_mail" type="radio" id="radio_mail_1">
+                          <label for="radio_mail_1">希望しない</label>
+                          <input name="radio_mail" type="radio" id="radio_mail_2">
+                          <label for="radio_mail_2">希望する</label>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+                <li>
+                  <article class="form_box">
+                    <div class="form_ttl">
                       住所
                     </div>
                     <div class="form_cnt">
